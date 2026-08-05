@@ -2,9 +2,18 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/i18n'
   ],
-
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', language: 'en' },
+      { code: 'tr', name: 'Türkçe', language: 'tr' },
+      { code: 'de', name: 'Deutsch', language: 'de' }
+    ],
+    defaultLocale: 'en',
+    detectBrowserLanguage: false
+  },
   devtools: {
     enabled: true
   },
