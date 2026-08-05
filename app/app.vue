@@ -1,26 +1,7 @@
-<script setup>
-useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
-})
-
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
-
+<script setup lang="ts">
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  title: 'Umut Yaşar Sarısoy — Web Developer',
+  description: 'Portfolio of Umut Yaşar Sarısoy, a web developer who loves to create beautiful and functional websites.'
 })
 </script>
 
@@ -28,49 +9,32 @@ useSeoMeta({
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+        <NuxtLink to="/" class="font-mono text-sm font-bold tracking-widest text-fog uppercase">
+          <span class="text-acid">~</span> LupusCaelum
         </NuxtLink>
-
-        <TemplateMenu />
       </template>
-
       <template #right>
-        <UColorModeButton />
-
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
+        <nav class="hidden items-center gap-1 font-mono text-sm sm:flex">
+          <NuxtLink to="/#about" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+            about
+          </NuxtLink>
+          <NuxtLink to="/#work" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+            work
+          </NuxtLink>
+          <NuxtLink to="/#contact" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+            contact
+          </NuxtLink>
+        </nav>
       </template>
     </UHeader>
-
     <UMain>
       <NuxtPage />
     </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
     <UFooter>
       <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        <p class="text-sm text-fog/60">
+          © {{ new Date().getFullYear() }} Umut Yaşar Sarısoy
         </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
     </UFooter>
   </UApp>

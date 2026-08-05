@@ -1,18 +1,45 @@
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:'JetBrains Mono Variable', ui-monospace, monospace;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+    --color-neon-50: #eefcff;
+  --color-neon-100: #d5f5fc;
+  --color-neon-200: #b0eaf7;
+  --color-neon-300: #77d8ee;
+  --color-neon-400: #35bddb;
+  --color-neon-500: #169bba;
+  --color-neon-600: #0f7f9b;
+  --color-neon-700: #0f6a82;
+  --color-neon-800: #12576b;
+  --color-neon-900: #144a5b;
+  --color-neon-950: #06303d;
+
+  --color-night: #0a0e14;
+  --color-surface: #11171f;
+  --color-line: #22303d;
+  --color-fog: #d9e2e8;
+  --color-acid: #c8ff4d;
+}
+@utility text-glow {
+  text-shadow: 0 0 18px var(--color-neon-400);
+}
+@utility shadow-brutal {
+  box-shadow: 6px 6px 0 0 var(--color-fog);
+}
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+@apply bg-night font-sans text-fog antialiased;
+}
+::selection {
+background-color: var(--color-neon-500);
+color: var(--color-night);
 }
