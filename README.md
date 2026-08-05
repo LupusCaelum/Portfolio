@@ -1,64 +1,73 @@
-# Nuxt Starter Template
+# ~ LupusCaelum — Portfolio
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+> Personal portfolio of **Umut Yaşar Sarısoy** — a web developer and a German teacher.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+Built with Nuxt 4, Nuxt UI, Tailwind CSS and Three.js. Trilingual (EN / TR / DE), statically generated, and deployed to GitHub Pages.
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+## Live site
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+**[https://lupuscaelum.github.io/Portfolio/](https://lupuscaelum.github.io/Portfolio/)**
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+## Tech stack
 
-## Quick Start
+| Layer        | Tooling                                                        |
+| ------------ | -------------------------------------------------------------- |
+| Framework    | [Nuxt 4](https://nuxt.com) + Vue 3                             |
+| UI           | [Nuxt UI](https://ui.nuxt.com) + Tailwind CSS 4                |
+| 3D           | [Three.js](https://threejs.org) + [TresJS](https://tresjs.org) |
+| Content      | [@nuxt/content](https://content.nuxt.com) (SQLite)             |
+| i18n         | [@nuxtjs/i18n](https://i18n.nuxtjs.org) (EN / TR / DE)         |
+| Deploy       | GitHub Actions → GitHub Pages                                  |
 
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
+## Features
 
-## Deploy your own
+- **Hero scene** — 3D starfield with a wireframe torus knot and mouse parallax (`HeroScene.vue`)
+- **Floating shapes** — rotating wireframe geometry decorating each section (`FloatingShape.vue`)
+- **Global spotlight** — a soft radial glow that follows the cursor
+- **Blog** — markdown posts with full translation into all three locales
+- **i18n** — English, Türkçe and Deutsch with locale-prefixed routes
+- **Fully static** — `nuxt generate` prerenders all routes for GitHub Pages
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+## Theme
 
-## Setup
+A "dark terminal" aesthetic:
 
-Make sure to install the dependencies:
+- **neon** `#169BBA` · **night** `#0a0e14` · **surface** `#11171f`
+- **line** `#22303d` · **fog** `#d9e2e8` · **acid** `#c8ff4d`
+- Fonts: Space Grotesk + JetBrains Mono
 
-```bash
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
+## Getting started
 
 ```bash
-pnpm build
+pnpm install       # install dependencies
+pnpm dev           # dev server → http://localhost:3000
+pnpm generate      # static build → .output/public
+pnpm preview       # preview the static build locally
+pnpm lint          # eslint
+pnpm typecheck     # vue-tsc type checking
 ```
 
-Locally preview production build:
+### Testing from your phone
 
 ```bash
-pnpm preview
+pnpm dev --host 0.0.0.0   # then open http://<your-lan-ip>:3000
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Project structure
 
-## Renovate integration
+```
+content/                # blog posts per locale (en/tr/de)
+app/
+  assets/css/           # theme + marquee animation
+  components/           # HeroScene, FloatingShape, ...
+  pages/                # index, blog list + detail
+  app.vue               # layout, header/footer, spotlight
+i18n/                   # locale messages
+.github/workflows/      # GitHub Pages deploy
+```
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+## Deploy
+
+Pushing to `master` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which runs `pnpm generate` and deploys `.output/public` to GitHub Pages. Requires **Settings → Pages → Source: GitHub Actions**.
+
+The site is served under the `/Portfolio/` base URL.
