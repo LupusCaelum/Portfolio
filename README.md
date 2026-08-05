@@ -36,22 +36,6 @@ A "dark terminal" aesthetic:
 - **line** `#22303d` · **fog** `#d9e2e8` · **acid** `#c8ff4d`
 - Fonts: Space Grotesk + JetBrains Mono
 
-## Getting started
-
-```bash
-pnpm install       # install dependencies
-pnpm dev           # dev server → http://localhost:3000
-pnpm generate      # static build → .output/public
-pnpm preview       # preview the static build locally
-pnpm lint          # eslint
-pnpm typecheck     # vue-tsc type checking
-```
-
-### Testing from your phone
-
-```bash
-pnpm dev --host 0.0.0.0   # then open http://<your-lan-ip>:3000
-```
 
 ## Project structure
 
@@ -65,9 +49,5 @@ app/
 i18n/                   # locale messages
 .github/workflows/      # GitHub Pages deploy
 ```
-
-## Deploy
-
-Pushing to `master` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which runs `pnpm generate` and deploys `.output/public` to GitHub Pages. Requires **Settings → Pages → Source: GitHub Actions**.
 
 The site is served under the `/Portfolio/` base URL.
