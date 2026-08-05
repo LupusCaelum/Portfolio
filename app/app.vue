@@ -15,7 +15,11 @@ function onMouseMove(event: MouseEvent) {
   y.value = event.clientY
 }
 
-onMounted(() => window.addEventListener('mousemove', onMouseMove))
+onMounted(() => {
+  window.addEventListener('mousemove', onMouseMove)
+  window.history.scrollRestoration = 'manual'
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+})
 onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
 </script>
 
