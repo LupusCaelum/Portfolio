@@ -7,6 +7,11 @@ useSeoMeta({
   description: 'Portfolio of Umut Yaşar Sarısoy, a web developer who loves to create beautiful and functional websites.'
 })
 
+const baseURL = useRuntimeConfig().app.baseURL
+useHead({
+  link: [{ rel: 'icon', type: 'image/svg+xml', href: `${baseURL}favicon.svg` }]
+})
+
 const x = ref(0)
 const y = ref(0)
 

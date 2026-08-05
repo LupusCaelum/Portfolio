@@ -23,15 +23,17 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
-    head: {
-      link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
-      ]
-    }
+    baseURL: '/Portfolio/'
   },
 
-  routeRules: {
-    '/': { prerender: true }
+  nitro: {
+    prerender: {
+      routes: [
+        '/', '/tr', '/de',
+        '/blog', '/tr/blog', '/de/blog',
+        '/blog/hello-world', '/tr/blog/hello-world', '/de/blog/hello-world'
+      ]
+    }
   },
 
   compatibilityDate: '2026-06-30',
