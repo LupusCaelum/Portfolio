@@ -1,13 +1,20 @@
 ---
 title: 'Merhaba, Dünya'
-description: 'Yepyeni portfolyo blogumdaki ilk yazı.'
+description: 'Portfolyomu neden yeniden inşa ettim — ve bu blog neyle ilgili.'
 date: '2026-08-05'
-tags: [nuxt, markdown]
+tags: [nuxt, vue, markdown]
 ---
 
-Bloguma hoş geldin! Portfolyomu **Nuxt**, **Vue** ve modern ön yüz geliştirmeyi öğrenmek için yeniden inşa ediyorum.
+Portfolyo bloguma hoş geldin. Birkaç ay önce bu sayfa yoktu — burada bahsedeceğim projelerin çoğu da yoktu.
 
-- Birinci madde
-- İkinci madde
+## Neden yeni bir portfolyo
 
-Bu yazı *Markdown* ile yazıldı — düz metinden HTML'e dönüşen bir biçim.
+Eski sayfam artık kullanmadığım becerileri listeliyordu. Onu güncellemek yerine her şeyi sıfırdan, bugün gerçekten kullandığım araçlarla — **Nuxt**, **Vue** — yeniden inşa ettim. Bu blog, giderken not tuttuğum yer: ne inşa ettiğim, ne öğrendiğim, neyin bozulduğu.
+
+## Neler bulacaksın
+
+- Yayına aldığım projelerin yazıları — ilki [Syllabifier](https://lupuscaelum.github.io/syllabifier/)
+- Go, WASM ve ön yüz geliştirme üzerine kısa teknik notlar
+- Arada bir hikâye — kod yazmaya başlamadan önce Almanca öğretiyordum
+
+Buradaki her şey *Markdown* ile yazılıyor ve **Nuxt Content** ile işleniyor.
