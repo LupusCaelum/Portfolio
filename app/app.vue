@@ -12,6 +12,13 @@ useHead({
   link: [{ rel: 'icon', type: 'image/svg+xml', href: `${baseURL}favicon.svg` }]
 })
 
+const navItems = computed(() => [
+  { label: t('nav.about'), to: localePath('/#about') },
+  { label: t('nav.work'), to: localePath('/#work') },
+  { label: t('nav.contact'), to: localePath('/#contact') },
+  { label: t('nav.blog'), to: localePath('/blog') }
+])
+
 const x = ref(0)
 const y = ref(0)
 
@@ -44,30 +51,14 @@ onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
         </NuxtLink>
       </template>
       <template #right>
-        <nav class="hidden items-center gap-1 font-mono text-sm sm:flex">
+        <nav class="hidden items-center gap-1 font-mono text-sm lg:flex">
           <NuxtLink
-            :to="localePath('/#about')"
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
             class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
           >
-            {{ t('nav.about') }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/#work')"
-            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
-          >
-            {{ t('nav.work') }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/#contact')"
-            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
-          >
-            {{ t('nav.contact') }}
-          </NuxtLink>
-          <NuxtLink
-            :to="localePath('/blog')"
-            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
-          >
-            {{ t('nav.blog') }}
+            {{ item.label }}
           </NuxtLink>
         </nav>
         <div class="flex items-center gap-0.5 border-l border-line pl-3 font-mono text-xs">
@@ -81,6 +72,18 @@ onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
             {{ l.code.toUpperCase() }}
           </NuxtLink>
         </div>
+      </template>
+      <template #body>
+        <nav class="flex flex-col items-start gap-1 font-mono text-sm lg:hidden">
+          <NuxtLink
+            v-for="item in navItems"
+            :key="item.to"
+            :to="item.to"
+            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
+          >
+            {{ item.label }}
+          </NuxtLink>
+        </nav>
       </template>
     </UHeader>
     <UMain class="relative z-10">
