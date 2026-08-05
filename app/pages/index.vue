@@ -4,7 +4,7 @@ const { t, tm } = useI18n()
 const skills = computed(() => tm('skills.items') as string[])
 const marqueeSkills = computed(() => [...skills.value, ...skills.value])
 const timeline = computed(() => tm('timeline.items') as { year: string, title: string, description: string }[])
-const projects = computed(() => tm('projects.items') as { title: string, description: string, stack: string[] }[])
+const projects = computed(() => tm('projects.items') as { title: string, description: string, stack: string[], url?: string }[])
 </script>
 
 <template>
@@ -153,25 +153,33 @@ const projects = computed(() => tm('projects.items') as { title: string, descrip
             :key="project.title"
             class="group flex flex-col border border-line p-6 transition-colors hover:border-neon-300"
           >
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-xs text-neon-300">{{ String(i + 1).padStart(2, '0') }}</span>
-              <span class="text-fog/30 transition-colors group-hover:text-acid">↗</span>
-            </div>
-            <h3 class="mt-4 font-bold text-fog">
-              {{ project.title }}
-            </h3>
-            <p class="mt-2 flex-1 text-sm text-fog/60">
-              {{ project.description }}
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span
-                v-for="tech in project.stack"
-                :key="tech"
-                class="border border-line px-2 py-0.5 font-mono text-xs text-primary-400"
-              >
-                {{ tech }}
-              </span>
-            </div>
+            <component
+              :is="project.url ? 'a' : 'div'"
+              :href="project.url || undefined"
+              :target="project.url ? '_blank' : undefined"
+              :rel="project.url ? 'noopener' : undefined"
+              class="flex flex-1 flex-col"
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-neon-300">{{ String(i + 1).padStart(2, '0') }}</span>
+                <span class="text-fog/30 transition-colors group-hover:text-acid">↗</span>
+              </div>
+              <h3 class="mt-4 font-bold text-fog">
+                {{ project.title }}
+              </h3>
+              <p class="mt-2 flex-1 text-sm text-fog/60">
+                {{ project.description }}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  v-for="tech in project.stack"
+                  :key="tech"
+                  class="border border-line px-2 py-0.5 font-mono text-xs text-primary-400"
+                >
+                  {{ tech }}
+                </span>
+              </div>
+            </component>
           </article>
         </div>
       </div>

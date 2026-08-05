@@ -36,7 +36,7 @@ export default defineI18nConfig(() => ({
         heading: 'Selected work',
         items: [
           { title: 'Portfolio site', description: 'The website you are looking at — built with Nuxt, Tailwind and TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
-          { title: 'Next project', description: 'A placeholder for your next idea. Replace me!', stack: ['Vue', 'Nuxt', 'Git'] }
+          { title: 'Syllabifier', description: 'A rule-based syllable splitter and affix analyzer for Turkish, German and English. Go core compiled to WASM — runs fully in the browser.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' }
         ]
       },
       contact: {
@@ -78,7 +78,7 @@ export default defineI18nConfig(() => ({
         heading: 'Seçili işler',
         items: [
           { title: 'Portfolio sitesi', description: 'Baktığınız site — Nuxt, Tailwind ve TypeScript ile geliştirildi.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
-          { title: 'Sıradaki proje', description: 'Bir sonraki fikrin için yer tutucu. Beni değiştir!', stack: ['Vue', 'Nuxt', 'Git'] }
+          { title: 'Syllabifier', description: 'Türkçe, Almanca ve İngilizce için kural tabanlı hece ve ek ayrıştırıcı. Go çekirdeği WASM\'e derlenmiş — tamamen tarayıcıda çalışır.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' }
         ]
       },
       contact: {
@@ -120,7 +120,7 @@ export default defineI18nConfig(() => ({
         heading: 'Ausgewählte Arbeiten',
         items: [
           { title: 'Portfolio-Website', description: 'Die Website, auf der du gerade bist — gebaut mit Nuxt, Tailwind und TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
-          { title: 'Nächstes Projekt', description: 'Ein Platzhalter für deine nächste Idee. Ersetze mich!', stack: ['Vue', 'Nuxt', 'Git'] }
+          { title: 'Syllabifier', description: 'Ein regelbasierter Silbentrenner und Affix-Analysator für Türkisch, Deutsch und Englisch. Go-Kern als WASM kompiliert — läuft komplett im Browser.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' }
         ]
       },
       contact: {
