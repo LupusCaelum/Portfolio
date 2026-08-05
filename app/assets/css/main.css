@@ -43,3 +43,14 @@ body {
 background-color: var(--color-neon-500);
 color: var(--color-night);
 }
+.marquee {
+  animation: marquee 30s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}

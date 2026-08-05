@@ -2,6 +2,7 @@
 const { t, tm } = useI18n()
 
 const skills = computed(() => tm('skills.items') as string[])
+const marqueeSkills = computed(() => [...skills.value, ...skills.value])
 const timeline = computed(() => tm('timeline.items') as { year: string; title: string; description: string }[])
 const projects = computed(() => tm('projects.items') as { title: string; description: string; stack: string[] }[])
 </script>
@@ -50,6 +51,19 @@ const projects = computed(() => tm('projects.items') as { title: string; descrip
     </div>
   </section>
 
+  <div class="overflow-hidden border-y border-line bg-surface/50 py-4">
+    <div class="marquee flex w-max gap-10 font-mono text-sm uppercase tracking-widest">
+      <span
+        v-for="(skill, i) in marqueeSkills"
+        :key="skill + i"
+        class="flex items-center gap-10 whitespace-nowrap text-fog/60"
+      >
+        {{ skill }}
+        <span class="text-acid">~</span>
+      </span>
+    </div>
+  </div>
+
   <section id="timeline" class="mx-auto max-w-3xl px-6 py-24">
     <p class="font-mono text-sm tracking-widest text-primary-400 uppercase">
       // {{ t('timeline.eyebrow') }}
@@ -75,14 +89,18 @@ const projects = computed(() => tm('projects.items') as { title: string; descrip
     <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
       {{ t('projects.heading') }}
     </h2>
-    <div class="mt-8 space-y-4">
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
       <article
-        v-for="project in projects"
+        v-for="(project, i) in projects"
         :key="project.title"
-        class="border border-line p-6 transition-colors hover:border-neon-300"
+        class="group flex flex-col border border-line p-6 transition-colors hover:border-neon-300"
       >
-        <h3 class="font-bold text-fog">{{ project.title }}</h3>
-        <p class="mt-2 text-sm text-fog/60">{{ project.description }}</p>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-xs text-neon-300">{{ String(i + 1).padStart(2, '0') }}</span>
+          <span class="text-fog/30 transition-colors group-hover:text-acid">↗</span>
+        </div>
+        <h3 class="mt-4 font-bold text-fog">{{ project.title }}</h3>
+        <p class="mt-2 flex-1 text-sm text-fog/60">{{ project.description }}</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <span
             v-for="tech in project.stack"
