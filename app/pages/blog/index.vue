@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import type { Collections } from '@nuxt/content'
 
-const { t, locale } = useI18n()
+const { t, locales } = useI18n()
 const localePath = useLocalePath()
+const route = useRoute()
+const locale = computed(() => {
+  const codes = locales.value.map(l => l.code) as string[]
+  return (route.path.split('/').find(s => codes.includes(s)) as 'en' | 'tr' | 'de') || 'en'
+})
 
 const collectionName = computed(() => `blog_${locale.value}` as keyof Collections)
 
-const { data: posts } = await useAsyncData('blog', async () => {
+const { data: posts } = await useAsyncData(`blog-${collectionName.value}`, async () => {
   const items = await queryCollection(collectionName.value).order('date', 'DESC').all()
   if (items.length > 0) return items
   if (locale.value !== 'en') {
