@@ -7,24 +7,17 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@tresjs/nuxt'
   ],
-  i18n: {
-    locales: [
-      { code: 'en', name: 'English', language: 'en' },
-      { code: 'tr', name: 'Türkçe', language: 'tr' },
-      { code: 'de', name: 'Deutsch', language: 'de' }
-    ],
-    defaultLocale: 'en',
-    detectBrowserLanguage: false
-  },
   devtools: {
     enabled: true
   },
 
-  css: ['~/assets/css/main.css'],
-
   app: {
     baseURL: '/Portfolio/'
   },
+
+  css: ['~/assets/css/main.css'],
+
+  compatibilityDate: '2026-06-30',
 
   nitro: {
     prerender: {
@@ -36,8 +29,6 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2026-06-30',
-
   eslint: {
     config: {
       stylistic: {
@@ -45,5 +36,14 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', language: 'en' },
+      { code: 'tr', name: 'Türkçe', language: 'tr' },
+      { code: 'de', name: 'Deutsch', language: 'de' }
+    ],
+    defaultLocale: 'en',
+    detectBrowserLanguage: false
   }
 })

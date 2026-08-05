@@ -20,13 +20,23 @@ const { data: post } = await useAsyncData('post', async () => {
 
 <template>
   <section class="mx-auto max-w-3xl px-6 py-24">
-    <NuxtLink :to="localePath('/blog')" class="font-mono text-xs text-fog/60 hover:text-neon-300">
+    <NuxtLink
+      :to="localePath('/blog')"
+      class="font-mono text-xs text-fog/60 hover:text-neon-300"
+    >
       ← {{ t('nav.blog') }}
     </NuxtLink>
-    <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ post?.title }}</h1>
-    <p class="mt-2 font-mono text-sm text-neon-300">{{ post?.date }}</p>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+      {{ post?.title }}
+    </h1>
+    <p class="mt-2 font-mono text-sm text-neon-300">
+      {{ post?.date }}
+    </p>
     <div class="mt-8 text-fog/80">
-      <ContentRenderer v-if="post" :value="post" />
+      <ContentRenderer
+        v-if="post"
+        :value="post"
+      />
     </div>
   </section>
 </template>

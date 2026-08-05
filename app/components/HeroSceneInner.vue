@@ -27,8 +27,19 @@ onBeforeRender(({ delta }) => {
   <TresGroup ref="group">
     <TresMesh :position="[2.6, 0.2, -1] as unknown as Vector3">
       <TresTorusKnotGeometry :args="[1.2, 0.32, 200, 32]" />
-      <TresMeshBasicMaterial color="#169bba" :wireframe="true" :transparent="true" :opacity="0.45" />
+      <TresMeshBasicMaterial
+        color="#169bba"
+        :wireframe="true"
+        :transparent="true"
+        :opacity="0.45"
+      />
     </TresMesh>
-    <Stars :radius="70" :depth="60" :count="3000" :factor="6" :fade="true" />
+    <Stars
+      :radius="70"
+      :depth="60"
+      :count="3000"
+      :factor="6"
+      :fade="true"
+    />
   </TresGroup>
 </template>

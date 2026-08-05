@@ -18,7 +18,10 @@ withDefaults(defineProps<{
 
 <template>
   <div class="pointer-events-none absolute inset-0 z-0">
-    <TresCanvas clear-color="transparent" :dpr="[1, 1.5]">
+    <TresCanvas
+      clear-color="transparent"
+      :dpr="[1, 1.5]"
+    >
       <TresPerspectiveCamera :position="[0, 0, 7] as unknown as Vector3" />
       <FloatingShapeInner
         :geometry="geometry"

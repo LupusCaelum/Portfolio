@@ -27,10 +27,27 @@ onBeforeRender(({ elapsed }) => {
 </script>
 
 <template>
-  <TresMesh ref="mesh" :position="position as unknown as Vector3">
-    <TresIcosahedronGeometry v-if="geometry === 'icosahedron'" :args="[size, 1]" />
-    <TresOctahedronGeometry v-else-if="geometry === 'octahedron'" :args="[size, 0]" />
-    <TresTorusKnotGeometry v-else :args="[size, size * 0.35, 128, 16]" />
-    <TresMeshBasicMaterial :color="color" :wireframe="true" :transparent="true" :opacity="0.4" />
+  <TresMesh
+    ref="mesh"
+    :position="position as unknown as Vector3"
+  >
+    <TresIcosahedronGeometry
+      v-if="geometry === 'icosahedron'"
+      :args="[size, 1]"
+    />
+    <TresOctahedronGeometry
+      v-else-if="geometry === 'octahedron'"
+      :args="[size, 0]"
+    />
+    <TresTorusKnotGeometry
+      v-else
+      :args="[size, size * 0.35, 128, 16]"
+    />
+    <TresMeshBasicMaterial
+      :color="color"
+      :wireframe="true"
+      :transparent="true"
+      :opacity="0.4"
+    />
   </TresMesh>
 </template>

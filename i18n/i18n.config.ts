@@ -13,8 +13,8 @@ export default defineI18nConfig(() => ({
       },
       about: {
         eyebrow: 'about',
-        heading: "Hi, I'm Umut",
-        body: "I'm a web developer and a German teacher from Turkey — two crafts with very different grammars. I build fast, accessible and beautiful websites, and I help people speak German with confidence."
+        heading: 'Hi, I\'m Umut',
+        body: 'I\'m a web developer and a German teacher from Turkey — two crafts with very different grammars. I build fast, accessible and beautiful websites, and I help people speak German with confidence.'
       },
       skills: {
         eyebrow: 'stacks',
@@ -41,7 +41,7 @@ export default defineI18nConfig(() => ({
       },
       contact: {
         eyebrow: 'contact',
-        heading: "Let's talk",
+        heading: 'Let\'s talk',
         body: 'Have an idea or a question? My inbox is always open.'
       }
     },
@@ -56,7 +56,7 @@ export default defineI18nConfig(() => ({
       about: {
         eyebrow: 'hakkımda',
         heading: 'Merhaba, ben Umut',
-        body: "Türkiye'den bir web geliştirici ve Almanca öğretmeniyim — gramerleri çok farklı iki iş. Hızlı, erişilebilir ve şık web siteleri kuruyorum; bir yandan da insanların Almancayı güvenle konuşmasına yardımcı oluyorum."
+        body: 'Türkiye\'den bir web geliştirici ve Almanca öğretmeniyim — gramerleri çok farklı iki iş. Hızlı, erişilebilir ve şık web siteleri kuruyorum; bir yandan da insanların Almancayı güvenle konuşmasına yardımcı oluyorum.'
       },
       skills: {
         eyebrow: 'stacks',

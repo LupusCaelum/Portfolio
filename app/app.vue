@@ -33,32 +33,51 @@ onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
     <div
       class="pointer-events-none fixed inset-0 z-0"
       :style="{ background: `radial-gradient(circle at ${x}px ${y}px, rgba(22, 155, 186, 0.3), transparent 20%)` }"
-    ></div>
+    />
     <UHeader>
       <template #left>
-        <NuxtLink :to="localePath('/')" class="font-mono text-sm font-bold tracking-widest text-fog uppercase">
+        <NuxtLink
+          :to="localePath('/')"
+          class="font-mono text-sm font-bold tracking-widest text-fog uppercase"
+        >
           <span class="text-acid">~</span> LupusCaelum
         </NuxtLink>
       </template>
       <template #right>
         <nav class="hidden items-center gap-1 font-mono text-sm sm:flex">
-          <NuxtLink :to="localePath('/#about')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink
+            :to="localePath('/#about')"
+            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
+          >
             {{ t('nav.about') }}
           </NuxtLink>
-          <NuxtLink :to="localePath('/#work')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink
+            :to="localePath('/#work')"
+            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
+          >
             {{ t('nav.work') }}
           </NuxtLink>
-          <NuxtLink :to="localePath('/#contact')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink
+            :to="localePath('/#contact')"
+            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
+          >
             {{ t('nav.contact') }}
           </NuxtLink>
-          <NuxtLink :to="localePath('/blog')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink
+            :to="localePath('/blog')"
+            class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300"
+          >
             {{ t('nav.blog') }}
           </NuxtLink>
         </nav>
         <div class="flex items-center gap-0.5 border-l border-line pl-3 font-mono text-xs">
-          <NuxtLink v-for="l in locales" :key="l.code" :to="switchLocalePath(l.code)"
+          <NuxtLink
+            v-for="l in locales"
+            :key="l.code"
+            :to="switchLocalePath(l.code)"
             class="rounded px-1.5 py-1 transition-colors"
-            :class="locale === l.code ? 'text-neon-300' : 'text-fog/50 hover:text-fog'">
+            :class="locale === l.code ? 'text-neon-300' : 'text-fog/50 hover:text-fog'"
+          >
             {{ l.code.toUpperCase() }}
           </NuxtLink>
         </div>
