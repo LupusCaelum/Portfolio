@@ -1,16 +1,9 @@
 <script setup lang="ts">
-const { t } = useI18n()
-const skills = ['HTML', 'CSS', 'Tailwind CSS', 'Vue', 'Nuxt', 'TypeScript', 'Git', 'Linux']
+const { t, tm } = useI18n()
 
-const timeline = [
-  { year: '2026', title: 'Rebuilding this portfolio', description: 'Learning Nuxt, Vue and modern front-end development from the ground up.' },
-  { year: '2025', title: 'First lines of code', description: 'Started with HTML and CSS, then discovered the world of JavaScript.' }
-]
-
-const projects = [
-  { title: 'Portfolio site', description: 'The website you are looking at — built with Nuxt, Tailwind and TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
-  { title: 'Next project', description: 'A placeholder for your next idea. Replace me!', stack: ['Vue', 'Nuxt', 'Git'] }
-]
+const skills = computed(() => tm('skills.items') as string[])
+const timeline = computed(() => tm('timeline.items') as { year: string; title: string; description: string }[])
+const projects = computed(() => tm('projects.items') as { title: string; description: string; stack: string[] }[])
 </script>
 <template>
   <section class="flex min-h-svh items-center justify-center px-6">

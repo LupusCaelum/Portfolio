@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t, locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 useSeoMeta({
   title: 'Umut Yaşar Sarısoy — Web Developer',
   description: 'Portfolio of Umut Yaşar Sarısoy, a web developer who loves to create beautiful and functional websites.'
@@ -26,22 +27,23 @@ onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
     ></div>
     <UHeader>
       <template #left>
-        <NuxtLink to="/" class="font-mono text-sm font-bold tracking-widest text-fog uppercase">
+        <NuxtLink :to="localePath('/')" class="font-mono text-sm font-bold tracking-widest text-fog uppercase">
           <span class="text-acid">~</span> LupusCaelum
         </NuxtLink>
       </template>
       <template #right>
         <nav class="hidden items-center gap-1 font-mono text-sm sm:flex">
-          <NuxtLink to="/#about" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
-
+          <NuxtLink :to="localePath('/#about')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
             {{ t('nav.about') }}
-
           </NuxtLink>
-          <NuxtLink to="/#work" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink :to="localePath('/#work')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
             {{ t('nav.work') }}
           </NuxtLink>
-          <NuxtLink to="/#contact" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+          <NuxtLink :to="localePath('/#contact')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
             {{ t('nav.contact') }}
+          </NuxtLink>
+          <NuxtLink :to="localePath('/blog')" class="px-3 py-1.5 text-fog/70 transition-colors hover:text-neon-300">
+            {{ t('nav.blog') }}
           </NuxtLink>
         </nav>
         <div class="flex items-center gap-0.5 border-l border-line pl-3 font-mono text-xs">
