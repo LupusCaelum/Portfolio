@@ -19,6 +19,19 @@ export default defineI18nConfig(() => ({
         eyebrow: 'stacks',
         heading: 'Skills'
       },
+      timeline: {
+        eyebrow: 'path',
+        heading: 'Timeline'
+      },
+      projects: {
+        eyebrow: 'work',
+        heading: 'Selected work'
+      },
+      contact: {
+        eyebrow: 'contact',
+        heading: "Let's talk",
+        body: 'Have an idea or a question? My inbox is always open.'
+      },
     },
     tr: {
       nav: { about: 'hakkımda', work: 'projeler', contact: 'iletişim' },
@@ -37,6 +50,19 @@ export default defineI18nConfig(() => ({
         eyebrow: 'stacks',
         heading: 'Yetenekler'
       },
+      timeline: {
+        eyebrow: 'yol',
+        heading: 'Zaman çizelgesi'
+      },
+      projects: {
+        eyebrow: 'projeler',
+        heading: 'Seçili işler'
+      },
+      contact: {
+        eyebrow: 'iletişim',
+        heading: 'Konuşalım',
+        body: 'Bir fikrin veya sorun mu var? Mesaj kutum her zaman açık.'
+      },
     },
     de: {
       nav: { about: 'über', work: 'projekte', contact: 'kontakt' },
@@ -54,6 +80,19 @@ export default defineI18nConfig(() => ({
       skills: {
         eyebrow: 'stacks',
         heading: 'Fähigkeiten'
+      },
+      timeline: {
+        eyebrow: 'werdegang',
+        heading: 'Werdegang'
+      },
+      projects: {
+        eyebrow: 'projekte',
+        heading: 'Ausgewählte Arbeiten'
+      },
+      contact: {
+        eyebrow: 'kontakt',
+        heading: 'Sprechen wir',
+        body: 'Hast du eine Idee oder eine Frage? Mein Postfach ist immer offen.'
       },
     }
   }

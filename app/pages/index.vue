@@ -1,23 +1,19 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const skills = ['HTML', 'CSS', 'Tailwind CSS', 'Vue', 'Nuxt', 'TypeScript', 'Git', 'Linux']
-const sectionRef = ref<HTMLElement | null>(null)
-const x = ref(0)
-const y = ref(0)
 
-function onMouseMove(event: MouseEvent) {
-  const rect = sectionRef.value?.getBoundingClientRect()
-  if (!rect) return
-  x.value = event.clientX - rect.left
-  y.value = event.clientY - rect.top
-}
+const timeline = [
+  { year: '2026', title: 'Rebuilding this portfolio', description: 'Learning Nuxt, Vue and modern front-end development from the ground up.' },
+  { year: '2025', title: 'First lines of code', description: 'Started with HTML and CSS, then discovered the world of JavaScript.' }
+]
+
+const projects = [
+  { title: 'Portfolio site', description: 'The website you are looking at — built with Nuxt, Tailwind and TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
+  { title: 'Next project', description: 'A placeholder for your next idea. Replace me!', stack: ['Vue', 'Nuxt', 'Git'] }
+]
 </script>
 <template>
-  <section ref="sectionRef" @mousemove="onMouseMove"
-    class="relative flex min-h-svh items-center justify-center overflow-hidden px-6">
-    <div class="pointer-events-none absolute inset-0"
-      :style="{ background: `radial-gradient(circle at ${x}px ${y}px, rgba(22, 155, 186, 0.3), transparent 20%)` }">
-    </div>
+  <section class="flex min-h-svh items-center justify-center px-6">
     <div class="max-w-3xl text-center">
       <p class="font-mono text-sm tracking-widest text-primary-400 uppercase">
         {{ t('hero.eyebrow') }}
@@ -59,5 +55,69 @@ function onMouseMove(event: MouseEvent) {
         {{ skill }}
       </div>
     </div>
+  </section>
+
+  <section id="timeline" class="mx-auto max-w-3xl px-6 py-24">
+    <p class="font-mono text-sm tracking-widest text-primary-400 uppercase">
+      // {{ t('timeline.eyebrow') }}
+    </p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+      {{ t('timeline.heading') }}
+    </h2>
+    <div class="mt-8 space-y-6">
+      <div v-for="item in timeline" :key="item.year" class="flex gap-4 border-l border-line pl-6">
+        <span class="font-mono text-sm text-neon-300">{{ item.year }}</span>
+        <div>
+          <h3 class="font-bold text-fog">{{ item.title }}</h3>
+          <p class="mt-1 text-sm text-fog/60">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="mx-auto max-w-3xl px-6 py-24">
+    <p class="font-mono text-sm tracking-widest text-primary-400 uppercase">
+      // {{ t('projects.eyebrow') }}
+    </p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+      {{ t('projects.heading') }}
+    </h2>
+    <div class="mt-8 space-y-4">
+      <article
+        v-for="project in projects"
+        :key="project.title"
+        class="border border-line p-6 transition-colors hover:border-neon-300"
+      >
+        <h3 class="font-bold text-fog">{{ project.title }}</h3>
+        <p class="mt-2 text-sm text-fog/60">{{ project.description }}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            v-for="tech in project.stack"
+            :key="tech"
+            class="border border-line px-2 py-0.5 font-mono text-xs text-primary-400"
+          >
+            {{ tech }}
+          </span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="mx-auto max-w-3xl px-6 py-24">
+    <p class="font-mono text-sm tracking-widest text-primary-400 uppercase">
+      // {{ t('contact.eyebrow') }}
+    </p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+      {{ t('contact.heading') }}
+    </h2>
+    <p class="mt-6 text-lg text-fog/80">
+      {{ t('contact.body') }}
+    </p>
+    <a
+      href="mailto:umutyasarsarisoy@gmail.com"
+      class="mt-6 inline-block border border-neon-300 px-5 py-2 font-mono text-sm text-neon-300 transition-colors hover:bg-neon-300 hover:text-night"
+    >
+      umutyasarsarisoy@gmail.com
+    </a>
   </section>
 </template>

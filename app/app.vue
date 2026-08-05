@@ -5,10 +5,25 @@ useSeoMeta({
   title: 'Umut Yaşar Sarısoy — Web Developer',
   description: 'Portfolio of Umut Yaşar Sarısoy, a web developer who loves to create beautiful and functional websites.'
 })
+
+const x = ref(0)
+const y = ref(0)
+
+function onMouseMove(event: MouseEvent) {
+  x.value = event.clientX
+  y.value = event.clientY
+}
+
+onMounted(() => window.addEventListener('mousemove', onMouseMove))
+onUnmounted(() => window.removeEventListener('mousemove', onMouseMove))
 </script>
 
 <template>
   <UApp>
+    <div
+      class="pointer-events-none fixed inset-0 z-0"
+      :style="{ background: `radial-gradient(circle at ${x}px ${y}px, rgba(22, 155, 186, 0.3), transparent 20%)` }"
+    ></div>
     <UHeader>
       <template #left>
         <NuxtLink to="/" class="font-mono text-sm font-bold tracking-widest text-fog uppercase">
@@ -38,10 +53,10 @@ useSeoMeta({
         </div>
       </template>
     </UHeader>
-    <UMain>
+    <UMain class="relative z-10">
       <NuxtPage />
     </UMain>
-    <UFooter>
+    <UFooter class="relative z-10">
       <template #left>
         <p class="text-sm text-fog/60">
           © {{ new Date().getFullYear() }} Umut Yaşar Sarısoy
