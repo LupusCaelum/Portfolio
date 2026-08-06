@@ -36,6 +36,7 @@ export default defineI18nConfig(() => ({
         heading: 'Selected work',
         items: [
           { title: 'Portfolio site', description: 'The website you are looking at — built with Nuxt, Tailwind and TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
+          { title: 'Ders Takip', description: 'A personal language-teaching manager — student tracking, lesson sessions and invoicing with Turkish-aware PDF invoices. Nuxt 4, SQLite and Tailwind.', stack: ['Nuxt', 'SQLite', 'Tailwind CSS'], url: 'https://github.com/LupusCaelum/ders-takip' },
           { title: 'Syllabifier', description: 'A rule-based syllable splitter and affix analyzer for Turkish, German and English. Go core compiled to WASM — runs fully in the browser.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' },
           { title: 'Pomodoro (Bongo Cat)', description: 'A cross-platform Pomodoro timer with a bongo cat that drums on your keyboard every second. Written in pure Bash — installable on Linux, macOS and Windows in one click.', stack: ['Bash', 'CLI', 'Linux'], url: 'https://github.com/LupusCaelum/pomodoro' }
         ]
@@ -79,6 +80,7 @@ export default defineI18nConfig(() => ({
         heading: 'Seçili işler',
         items: [
           { title: 'Portfolio sitesi', description: 'Baktığınız site — Nuxt, Tailwind ve TypeScript ile geliştirildi.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
+          { title: 'Ders Takip', description: 'Kişisel dil eğitimi yönetim aracı — öğrenci takibi, ders kayıtları ve Türkçe karakter destekli PDF faturalar. Nuxt 4, SQLite ve Tailwind.', stack: ['Nuxt', 'SQLite', 'Tailwind CSS'], url: 'https://github.com/LupusCaelum/ders-takip' },
           { title: 'Syllabifier', description: 'Türkçe, Almanca ve İngilizce için kural tabanlı hece ve ek ayrıştırıcı. Go çekirdeği WASM\'e derlenmiş — tamamen tarayıcıda çalışır.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' },
           { title: 'Pomodoro (Bongo Cat)', description: 'Her saniye klavyene vuran bir bongo kedi eşliğinde çalışan çapraz platform Pomodoro zamanlayıcısı. Saf Bash ile yazıldı — Linux, macOS ve Windows\'ta tek tıkla kurulur.', stack: ['Bash', 'CLI', 'Linux'], url: 'https://github.com/LupusCaelum/pomodoro' }
         ]
@@ -122,6 +124,7 @@ export default defineI18nConfig(() => ({
         heading: 'Ausgewählte Arbeiten',
         items: [
           { title: 'Portfolio-Website', description: 'Die Website, auf der du gerade bist — gebaut mit Nuxt, Tailwind und TypeScript.', stack: ['Nuxt', 'Tailwind CSS', 'TypeScript'] },
+          { title: 'Ders Takip', description: 'Ein persönlicher Unterrichts-Manager für Sprachlehrer — Schülerverwaltung, Stundenerfassung und Rechnungen mit türkisch-fähigen PDFs. Nuxt 4, SQLite und Tailwind.', stack: ['Nuxt', 'SQLite', 'Tailwind CSS'], url: 'https://github.com/LupusCaelum/ders-takip' },
           { title: 'Syllabifier', description: 'Ein regelbasierter Silbentrenner und Affix-Analysator für Türkisch, Deutsch und Englisch. Go-Kern als WASM kompiliert — läuft komplett im Browser.', stack: ['Go', 'WASM', 'JavaScript'], url: 'https://lupuscaelum.github.io/syllabifier/' },
           { title: 'Pomodoro (Bongo Cat)', description: 'Ein plattformübergreifender Pomodoro-Timer, bei dem eine Bongo-Katze jede Sekunde auf deine Tastatur trommelt. Reines Bash — mit einem Klick für Linux, macOS und Windows installierbar.', stack: ['Bash', 'CLI', 'Linux'], url: 'https://github.com/LupusCaelum/pomodoro' }
         ]

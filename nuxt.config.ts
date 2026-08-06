@@ -24,7 +24,8 @@ export default defineNuxtConfig({
       routes: [
         '/', '/tr', '/de',
         '/blog', '/tr/blog', '/de/blog',
-        '/blog/hello-world', '/tr/blog/hello-world', '/de/blog/hello-world'
+        '/blog/hello-world', '/tr/blog/hello-world', '/de/blog/hello-world',
+        '/blog/ders-takip', '/tr/blog/ders-takip', '/de/blog/ders-takip'
       ]
     }
   },
