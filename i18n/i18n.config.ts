@@ -9,7 +9,7 @@ export default defineI18nConfig(() => ({
       hero: {
         eyebrow: 'system_prompt, "hello, i\'m"',
         name: 'Umut Yaşar Sarısoy',
-        tagline: 'Web Developer - I love creating beautiful and functional websites.'
+        tagline: 'Teacher by day · developer by night'
       },
       about: {
         eyebrow: 'about',
@@ -52,7 +52,7 @@ export default defineI18nConfig(() => ({
       hero: {
         eyebrow: 'system_prompt, "merhaba, ben"',
         name: 'Umut Yaşar Sarısoy',
-        tagline: 'Web Geliştirici - güzel ve işlevsel web siteleri oluşturmayı seviyorum.'
+        tagline: 'Gündüzleri Öğretmen · Geceleri Yazılımcı geliştirici'
       },
       about: {
         eyebrow: 'hakkımda',
@@ -95,7 +95,7 @@ export default defineI18nConfig(() => ({
       hero: {
         eyebrow: 'system_prompt, "hallo, ich bin"',
         name: 'Umut Yaşar Sarısoy',
-        tagline: 'Webentwickler - Ich liebe es, schöne und funktionale Websites zu erstellen.'
+        tagline: 'Tagesüber Lehrer · Nachts Sofwareentwickler'
       },
       about: {
         eyebrow: 'über',
